@@ -11,6 +11,7 @@
 // Node 22, no dependencies.
 
 import { copyFileSync, mkdirSync, readFileSync } from "node:fs";
+import { createHash } from "node:crypto";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -51,10 +52,32 @@ if (!isPng && !isJpeg) {
 // --- dimensions ------------------------------------------------------------
 // PNG stores width and height as big-endian uint32s in the IHDR chunk,
 // which begins right after the 8-byte signature: length(4) "IHDR"(4),
-// then width at offset 16 and height at offset 20. For JPEG the dimensions
-// live in a later marker segment; walking those is more machinery than this
-// check needs, so JPEGs get a pass here and the size cap above still binds.
-let dimensions = "unknown (JPEG, not measured)";
+// then width at offset 16 and height at offset 20. JPEG keeps them in a
+// Start Of Frame segment, so for a JPEG I walk the marker segments: each
+// is 0xFF, a marker byte, and (for most) a two-byte length that counts
+// itself; stand-alone markers (TEM, RSTn, SOI, EOI) carry no length. The
+// first SOF0/SOF1/SOF2 segment holds precision(1), height(2), width(2).
+function jpegDimensions(data: Buffer): { width: number; height: number } | null {
+  let at = 2; // skip the SOI marker the signature check already confirmed
+  while (at + 3 < data.length) {
+    if (data[at] !== 0xff) return null;
+    const marker = data[at + 1]!;
+    if (marker === 0x01 || (marker >= 0xd0 && marker <= 0xd9)) {
+      at += 2;
+      continue;
+    }
+    const length = data.readUInt16BE(at + 2);
+    if (length < 2) return null;
+    if (marker >= 0xc0 && marker <= 0xc2) {
+      if (at + 9 > data.length) return null;
+      return { height: data.readUInt16BE(at + 5), width: data.readUInt16BE(at + 7) };
+    }
+    at += 2 + length;
+  }
+  return null;
+}
+
+let dimensions = "unknown";
 if (isPng) {
   if (bytes.length < 24 || bytes.toString("ascii", 12, 16) !== "IHDR") {
     fail("entry.png has a PNG signature but no readable IHDR chunk");
@@ -66,13 +89,21 @@ if (isPng) {
     fail(`PNG is ${width}x${height}, over the ${MAX_SIDE}x${MAX_SIDE} limit`);
   }
   dimensions = `${width}x${height}`;
+} else {
+  const found = jpegDimensions(bytes);
+  if (found === null) fail("entry.png has a JPEG signature but no readable frame segment");
+  if (found.width > MAX_SIDE || found.height > MAX_SIDE) {
+    fail(`JPEG is ${found.width}x${found.height}, over the ${MAX_SIDE}x${MAX_SIDE} limit`);
+  }
+  dimensions = `${found.width}x${found.height}`;
 }
 
 // --- ship it ---------------------------------------------------------------
 mkdirSync(outDir, { recursive: true });
 copyFileSync(source, target);
+const fingerprint = createHash("sha256").update(bytes).digest("hex").slice(0, 16);
 
 console.log(
   `the-day-in-one-picture: ${isPng ? "PNG" : "JPEG"}, ${bytes.length} bytes, ` +
-    `${dimensions} -> ${target}`,
+    `${dimensions}, sha256 ${fingerprint}… -> ${target}`,
 );
