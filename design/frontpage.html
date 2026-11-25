@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Day in One Picture — Wednesday, 25 November 2026</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1024px; height: 1024px; }
+  body {
+    background: #f6f1e3;
+    color: #1b1813;
+    font-family: Georgia, "Times New Roman", "DejaVu Serif", serif;
+    padding: 24px 38px 20px 38px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .sans { font-family: "Helvetica Neue", Arial, "DejaVu Sans", sans-serif; }
+
+  /* ---------- masthead ---------- */
+  .eyebrow {
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-family: "Helvetica Neue", Arial, "DejaVu Sans", sans-serif;
+    font-size: 15px; letter-spacing: 3px; text-transform: uppercase;
+    color: #5a5344; padding-bottom: 8px;
+    border-bottom: 1px solid #1b1813;
+  }
+  h1.masthead {
+    text-align: center;
+    font-size: 62px; font-weight: 900; letter-spacing: 1px;
+    line-height: 1.02; padding: 10px 0 2px 0;
+    text-transform: uppercase;
+  }
+  .dateline {
+    text-align: center;
+    font-size: 42px; font-weight: 700;
+    padding: 4px 0 8px 0;
+    border-bottom: 4px double #1b1813;
+  }
+  .dateline .accent { color: #a31d21; }
+
+  /* ---------- lead story ---------- */
+  .lead {
+    display: flex; gap: 28px;
+    padding: 16px 0 12px 0;
+    border-bottom: 2px solid #1b1813;
+  }
+  .lead-text { flex: 1 1 auto; }
+  .kicker {
+    font-family: "Helvetica Neue", Arial, "DejaVu Sans", sans-serif;
+    font-size: 17px; font-weight: 700; letter-spacing: 3px;
+    color: #a31d21; text-transform: uppercase; margin-bottom: 6px;
+  }
+  .lead h2 {
+    font-size: 50px; font-weight: 900; line-height: 1.04;
+    text-transform: uppercase;
+  }
+  .lead .deck {
+    font-size: 21.5px; font-style: italic; line-height: 1.28;
+    margin-top: 8px; color: #2c2820;
+  }
+  .lead .body {
+    font-family: "Helvetica Neue", Arial, "DejaVu Sans", sans-serif;
+    font-size: 17.5px; line-height: 1.42; margin-top: 8px; color: #3d382e;
+  }
+  .lead-art {
+    flex: 0 0 252px; display: flex; align-items: center; justify-content: center;
+  }
+
+  /* ---------- grid ---------- */
+  .grid {
+    flex: 1 1 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+  .cell {
+    display: flex; gap: 16px; align-items: center;
+    padding: 10px 14px 10px 6px;
+  }
+  .cell:nth-child(odd)  { border-right: 1px solid #b9b09a; padding-right: 20px; }
+  .cell:nth-child(even) { padding-left: 20px; }
+  .cell:nth-child(-n+4) { border-bottom: 1px solid #b9b09a; }
+  .icon { flex: 0 0 84px; display: flex; align-items: center; justify-content: center; }
+  .cell h3 {
+    font-size: 26px; font-weight: 900; line-height: 1.12;
+    text-transform: uppercase; letter-spacing: 0.2px;
+  }
+  .cell p {
+    font-family: "Helvetica Neue", Arial, "DejaVu Sans", sans-serif;
+    font-size: 17px; line-height: 1.33; color: #3d382e; margin-top: 5px;
+  }
+  .cell .tag {
+    font-family: "Helvetica Neue", Arial, "DejaVu Sans", sans-serif;
+    font-size: 12.5px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: #1d4e6b; margin-bottom: 3px;
+  }
+
+  /* ---------- footer ticker ---------- */
+  .ticker {
+    background: #1b1813; color: #f6f1e3;
+    font-family: "Helvetica Neue", Arial, "DejaVu Sans", sans-serif;
+    margin-top: 10px; padding: 11px 18px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .ticker .label {
+    flex: 0 0 auto; font-size: 14px; font-weight: 700; letter-spacing: 2px;
+    color: #e8b64c; text-transform: uppercase;
+    border-right: 1px solid #57503f; padding-right: 14px;
+  }
+  .ticker .items { font-size: 17.5px; line-height: 1.4; text-align: center; flex: 1 1 auto; }
+  .ticker .down { color: #e88a8a; }
+  .ticker .sep { color: #8a8271; padding: 0 2px; }
+</style>
+</head>
+<body>
+
+  <div class="eyebrow">
+    <span>World Edition</span>
+    <span>All the day's news · One page</span>
+    <span>No. 25</span>
+  </div>
+
+  <h1 class="masthead">The Day in One Picture</h1>
+
+  <div class="dateline">Wednesday, <span class="accent">25 November 2026</span></div>
+
+  <!-- ================= LEAD ================= -->
+  <section class="lead">
+    <div class="lead-text">
+      <div class="kicker">COP31 · Antalya</div>
+      <h2>Climate Talks Collapse</h2>
+      <p class="deck">Oil producers block any mention of phasing out fossil fuels, and the summit ends in failure.</p>
+      <p class="body">Saudi Arabia and fellow oil states pushed carbon capture instead of a phase-out. Nepal, hit by floods, leaves without the aid it came for.</p>
+    </div>
+    <div class="lead-art">
+      <!-- globe with a thermometer: a warming world, talks stalled -->
+      <svg width="240" height="220" viewBox="0 0 240 220" fill="none" stroke="#1b1813" stroke-width="4" stroke-linecap="round">
+        <circle cx="98" cy="110" r="76"/>
+        <ellipse cx="98" cy="110" rx="34" ry="76"/>
+        <line x1="22" y1="110" x2="174" y2="110"/>
+        <path d="M34 66 Q98 88 162 66"/>
+        <path d="M34 154 Q98 132 162 154"/>
+        <!-- thermometer -->
+        <line x1="204" y1="34" x2="204" y2="140" stroke-width="13" stroke="#d8cfb6"/>
+        <line x1="204" y1="86" x2="204" y2="140" stroke-width="13" stroke="#a31d21"/>
+        <circle cx="204" cy="158" r="19" fill="#a31d21" stroke="#a31d21"/>
+        <line x1="216" y1="52" x2="228" y2="52"/>
+        <line x1="216" y1="82" x2="228" y2="82"/>
+        <line x1="216" y1="112" x2="228" y2="112"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ================= GRID ================= -->
+  <section class="grid">
+
+    <div class="cell">
+      <div class="icon">
+        <!-- tanker and a naval mine -->
+        <svg width="84" height="84" viewBox="0 0 84 84" fill="none" stroke="#1b1813" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 56 L78 56 L70 70 L16 70 Z"/>
+          <rect x="30" y="44" width="22" height="12"/>
+          <line x1="62" y1="44" x2="62" y2="56"/>
+          <circle cx="24" cy="24" r="9" fill="#a31d21" stroke="#a31d21"/>
+          <path d="M24 10 L24 15 M24 33 L24 38 M10 24 L15 24 M33 24 L38 24 M14 14 L17.5 17.5 M30.5 30.5 L34 34 M34 14 L30.5 17.5 M17.5 30.5 L14 34" stroke="#a31d21"/>
+          <path d="M4 79 Q14 74 24 79 T44 79 T64 79 T84 79" stroke="#1d4e6b"/>
+        </svg>
+      </div>
+      <div>
+        <div class="tag">Middle East</div>
+        <h3>Two Tankers Hit Mines</h3>
+        <p>Ships struck in the Strait of Hormuz as Iran war pressure spreads.</p>
+      </div>
+    </div>
+
+    <div class="cell">
+      <div class="icon">
+        <!-- drone over a ship -->
+        <svg width="84" height="84" viewBox="0 0 84 84" fill="none" stroke="#1b1813" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="14" cy="14" r="6"/><circle cx="70" cy="14" r="6"/>
+          <circle cx="14" cy="40" r="6"/><circle cx="70" cy="40" r="6"/>
+          <path d="M19 18 L34 24 M65 18 L50 24 M19 36 L34 30 M65 36 L50 30"/>
+          <rect x="34" y="22" width="16" height="11"/>
+          <path d="M42 33 L42 42"/>
+          <path d="M10 62 L74 62 L67 73 L18 73 Z"/>
+          <path d="M4 80 Q14 75 24 80 T44 80 T64 80 T84 80" stroke="#1d4e6b"/>
+        </svg>
+      </div>
+      <div>
+        <div class="tag">Ukraine War</div>
+        <h3>Drone Hits Russian Ship</h3>
+        <p>Kyiv confirms a strike on a cargo ship in the Gulf of Finland.</p>
+      </div>
+    </div>
+
+    <div class="cell">
+      <div class="icon">
+        <!-- plunging chart -->
+        <svg width="84" height="84" viewBox="0 0 84 84" fill="none" stroke="#1b1813" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="10" y1="8" x2="10" y2="72"/>
+          <line x1="10" y1="72" x2="78" y2="72"/>
+          <polyline points="16,20 32,30 44,26 72,60" stroke="#a31d21" stroke-width="4.4"/>
+          <polyline points="58,58 72,60 70,46" stroke="#a31d21" stroke-width="4.4"/>
+        </svg>
+      </div>
+      <div>
+        <div class="tag">Markets</div>
+        <h3>Nvidia Shares Slide 7%</h3>
+        <p>Huang reinstated amid CEO turmoil; Asian stocks tumble.</p>
+      </div>
+    </div>
+
+    <div class="cell">
+      <div class="icon">
+        <!-- gavel -->
+        <svg width="84" height="84" viewBox="0 0 84 84" fill="none" stroke="#1b1813" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="30" y="8" width="26" height="13" transform="rotate(38 43 14)"/>
+          <line x1="46" y1="28" x2="66" y2="52"/>
+          <line x1="58" y1="44" x2="70" y2="56" stroke-width="5"/>
+          <line x1="8" y1="70" x2="52" y2="70"/>
+          <line x1="14" y1="77" x2="46" y2="77"/>
+        </svg>
+      </div>
+      <div>
+        <div class="tag">United States</div>
+        <h3>Huawei Guilty in U.S. Trial</h3>
+        <p>Convicted on 10 of 12 counts: bank fraud, trade-secret theft.</p>
+      </div>
+    </div>
+
+    <div class="cell">
+      <div class="icon">
+        <!-- space station -->
+        <svg width="84" height="84" viewBox="0 0 84 84" fill="none" stroke="#1b1813" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="42" cy="40" r="11"/>
+          <line x1="31" y1="40" x2="12" y2="40"/>
+          <line x1="53" y1="40" x2="72" y2="40"/>
+          <rect x="2" y="30" width="12" height="20" fill="#1d4e6b"/>
+          <rect x="70" y="30" width="12" height="20" fill="#1d4e6b"/>
+          <line x1="42" y1="51" x2="42" y2="62"/>
+          <path d="M8 76 Q42 62 76 76" stroke="#a31d21"/>
+          <circle cx="70" cy="12" r="2.6" fill="#1b1813"/>
+          <circle cx="14" cy="10" r="2.2" fill="#1b1813"/>
+        </svg>
+      </div>
+      <div>
+        <div class="tag">Space</div>
+        <h3>Pakistan Astronaut in Orbit</h3>
+        <p>The nation's first astronaut reaches China's space station.</p>
+      </div>
+    </div>
+
+    <div class="cell">
+      <div class="icon">
+        <!-- trophy -->
+        <svg width="84" height="84" viewBox="0 0 84 84" fill="none" stroke="#1b1813" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M26 10 L58 10 L58 28 Q58 44 42 44 Q26 44 26 28 Z"/>
+          <path d="M26 16 Q10 16 12 28 Q14 38 27 36"/>
+          <path d="M58 16 Q74 16 72 28 Q70 38 57 36"/>
+          <path d="M42 44 L42 56"/>
+          <line x1="30" y1="64" x2="54" y2="64"/>
+          <line x1="26" y1="72" x2="58" y2="72"/>
+          <path d="M42 19 L44.5 25 L51 25.5 L46 29.5 L47.5 36 L42 32.5 L36.5 36 L38 29.5 L33 25.5 L39.5 25 Z" fill="#e8b64c" stroke="#e8b64c"/>
+        </svg>
+      </div>
+      <div>
+        <div class="tag">Sport</div>
+        <h3>Senegal Regain Africa Cup</h3>
+        <p>Sports court overturns the title award to Morocco.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ================= TICKER ================= -->
+  <footer class="ticker">
+    <div class="label">Markets &amp; More</div>
+    <div class="items">
+      S&amp;P 500 <span class="down">−0.5%</span><span class="sep"> · </span>Nikkei <span class="down">−2.76%</span><span class="sep"> · </span>Brent crude $87.49<span class="sep"> · </span>US readies new global tariffs<span class="sep"> · </span>Sarkozy corruption case to trial
+    </div>
+  </footer>
+
+</body>
+</html>
